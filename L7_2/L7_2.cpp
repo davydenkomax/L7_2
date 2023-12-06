@@ -6,11 +6,29 @@
 
 using namespace std;
 
-void inputMatrix(int, int, double**);
+/**
+ * @brief Ввод значений элементов матрицы
+ * @param m кол-во строк
+ * @param n кол-во столбцов
+ * @param matrix возвращает заполненную матрицу
+*/
+void inputMatrix(int m, int n, double** matrix);
 
-void processMatrix(int, int, double**);
+/**
+ * @brief Меняет местами левую и правую часть матрицы
+ * @param m кол-во строк
+ * @param n кол-во столбцов 
+ * @param matrix возвращает измененную матрицу
+*/
+void processMatrix(int m, int n, double** matrix);
 
-void printMatrix(int, int, double**);
+/**
+ * @brief Вывод матрицы
+ * @param m кол-во строк
+ * @param n кол-во столбцов
+ * @param matrix позволяет вывести все элементы матрицы
+*/
+void printMatrix(int m, int n, double** matrix);
 
 int main() {
     setlocale(LC_ALL, "ru");
@@ -41,7 +59,7 @@ int main() {
     //Вызов финкции printMatrix
     printMatrix(m, n, matrix);
     // Освобождение выделенной памяти
-        for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
             delete[] matrix[i];
         }
     delete[] matrix;
